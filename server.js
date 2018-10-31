@@ -21,6 +21,7 @@ var School= require('./models/school');
 var Header= require('./models/header');
 var Quote= require('./models/quote');
 var User= require('./models/user');
+var Question= require('./models/question');
 
 
 var mongoconnectstring = 'mongodb://'+config.mongodb.server+':'+config.mongodb.port+'/'+config.mongodb.database;
@@ -50,6 +51,9 @@ app.use('/api', reviewRoute);
 
 var favouriteRoute = require('./api/routes/favouriteRoute');
 app.use('/api', favouriteRoute);
+
+var questionRoute = require('./api/routes/questionRoute');
+app.use('/api', questionRoute);
 
 //app.use(device.capture());
 

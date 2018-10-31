@@ -12,8 +12,7 @@ var questionSchema = mongoose.Schema({
 		type: String
 	},
 	author:{
-		type: String,
-		required: true
+		type: String
     },
     answers:{
         type: [String]
