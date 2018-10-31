@@ -1,0 +1,16 @@
+{
+  "search-master": 
+  {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 27017,
+      "dbName": "wis"
+    },
+    "aws" :{
+    	"accessKeyId": "akid", 
+    	"secretAccessKey": "secret", 
+    	"region": "us-east-1"
+    },
+    "device-detect":"false"
+  }
+}

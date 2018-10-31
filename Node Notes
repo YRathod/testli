@@ -1,0 +1,32 @@
+How to use HTML with Express (Node.js)
+
+There is no direct way of using HTML under Jade, which comes with Express by default, But if you want to use more HTML-style templates, you could use els instead of Jade. Follow these steps to use ejs instead of Jade -
+
+1) Install ejs –
+
+1
+npm install ejs
+2) Set your template engine in app.js as ejs
+
+1
+2
+3
+// app.js
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+3) Now in your route file you can assign template variables –
+
+1
+2
+3
+4
+// ./routes/index.js
+exports.index = function(req, res){
+  res.render('index', { title: 'ejs' });
+};
+4) Then you can create your html view in /views directory.
+
+1
+2
+// ./views/index.html
+<h1>Welcome to <%= title %>!</h1>
