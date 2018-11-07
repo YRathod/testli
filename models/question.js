@@ -66,14 +66,8 @@ module.exports.addQuestion = function(question, callback){
 module.exports.updateQuestion = function(id, question, options, callback){
 	var query = {_id: id};
 	var update = {
-		title: question.title,
-		genre: question.genre,
-		description: question.description,
-		author: question.author,
-		publisher: question.publisher,
-		pages: question.pages,
-		image_url: question.image_url,
-		buy_url: question.buy_url
+		title: question.title
+		
 	}
 	Question.findOneAndUpdate(query, update, options, callback);
 }
