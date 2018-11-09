@@ -26,9 +26,6 @@ var questionSchema = mongoose.Schema({
 	category:{
 		type: [String]
     },
-    explaination:{
-		type: [String]
-    },
     referencematerial:{
 		type: referenceModel, default:referenceModel
 	},
