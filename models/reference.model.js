@@ -8,6 +8,9 @@ var referenceModel = mongoose.Schema({
     },
     urls:{
         type: [String]
+    },
+    text :{
+        type: [String]
     }
 });
 
