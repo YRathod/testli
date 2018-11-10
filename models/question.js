@@ -56,6 +56,7 @@ module.exports.getQuestionById = function(id, callback){
 
 // Add Question
 module.exports.addQuestion = function(question, callback){
+	console.log(question);
 	Question.create(question, callback);
 }
 
