@@ -54,6 +54,32 @@ module.exports.getQuestionById = function(id, callback){
 	Question.findById(id, callback);
 }
 
+// Get Question for  tag names like Math + Algebra + Stastics 
+module.exports.getQuestionByTags = function(category, callback){
+	Question.find()
+		.where('category')
+		.in([category])
+		.exec(function (err, records) {
+			if(err){
+				console.log(err);
+				callback(err);
+			}
+			console.log("records : " + records.length);
+			callback(records);//this will return to main routing method
+		});
+
+
+		// Question.
+		// 	find({ }).
+		// 	where('category').in([category]).
+		// 	exec(function (records) {
+		// 		console.log("records : " + records);
+		// 		callback(records);//this will return to main routing method
+		// 	}, function( err ) {
+		// 		callback(err);
+		// 	});
+}
+
 // Add Question
 module.exports.addQuestion = function(question, callback){
 	console.log(question);
