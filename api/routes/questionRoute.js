@@ -109,13 +109,13 @@ router.get('/allquestion', function(req, res){
 // });
 
 router.get('/question/search/category=:category', function(req, res){
-	console.log(req.params.category);
-	questionModel.getQuestionByTags(req.params.category, function(err, result){
-		if(err){
-			console.log(err);
-			throw err;
-		}
-		console.log('questionModel -->'+ result.length);
+	//console.log(req.params.category);
+	questionModel.getQuestionByTags(req.params.category, function(result){
+		// if(err){
+		// 	console.log(err);
+		// 	throw err;   
+		// }
+		//console.log('questionModel -->'+ result.length);
 		res.json(result);
 	});
 });

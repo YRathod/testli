@@ -56,15 +56,18 @@ module.exports.getQuestionById = function(id, callback){
 
 // Get Question for  tag names like Math + Algebra + Stastics 
 module.exports.getQuestionByTags = function(category, callback){
+	var preferCategory = category.split(",");
+	console.log(preferCategory);
+	
 	Question.find()
 		.where('category')
-		.in([category])
+		.in([preferCategory])
 		.exec(function (err, records) {
 			if(err){
 				console.log(err);
 				callback(err);
 			}
-			console.log("records : " + records.length);
+			//console.log("records : " + records.length);
 			callback(records);//this will return to main routing method
 		});
 
