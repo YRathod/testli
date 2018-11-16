@@ -59,10 +59,23 @@ module.exports.getQuestionByTags = function(category, callback){
 	var preferCategory = category.split(",");
 	console.log(preferCategory);
 	
-	Question.find()
-		.where('category')
-		.in([preferCategory])
-		.exec(function (err, records) {
+	// Question.find()
+	// 	.where('category')
+	// 	.in([preferCategory])
+	// 	.exec(function (err, records) {
+	// 		if(err){
+	// 			console.log(err);
+	// 			callback(err);
+	// 		}
+	// 		//console.log("records : " + records.length);
+	// 		callback(records);//this will return to main routing method
+	// 	});
+
+
+		Question.
+		find().
+		where('category').in(preferCategory).
+		exec(function (err, records) {
 			if(err){
 				console.log(err);
 				callback(err);
@@ -70,7 +83,6 @@ module.exports.getQuestionByTags = function(category, callback){
 			//console.log("records : " + records.length);
 			callback(records);//this will return to main routing method
 		});
-
 
 		// Question.
 		// 	find({ }).
