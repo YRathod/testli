@@ -1,5 +1,5 @@
 module.exports=function(app){
-	var question = require('../controllers/question.controller.js');
+	var question = require('../controllers/question.bank.controller');
     //Retrieve all user profiles
     app.get('/api/question',question.findAll);
     //Retrieve single user profile with userId

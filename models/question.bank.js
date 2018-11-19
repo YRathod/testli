@@ -37,7 +37,7 @@ var questionSchema = mongoose.Schema({
 	}
 });
 
-var Question = module.exports = mongoose.model('Question', questionSchema);
+var Question = module.exports = mongoose.model('QuestionBank', questionSchema);
 
 
 // Get Questions

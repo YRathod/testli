@@ -15,18 +15,12 @@ app.use(express.static(__dirname+'/views'));
 app.use(bodyParser.json());
 app.use(cors())
 
-
-var Question= require('./models/question');
-
-//profile routes
-
-
 var mongoconnectstring = 'mongodb://'+config.mongodb.server+':'+config.mongodb.port+'/'+config.mongodb.database;
 console.log(mongoconnectstring);
 mongoose.connect(mongoconnectstring);
 
 var db = mongoose.connection;
-require('./api/routes/question.routes.js')(app);
+require('./api/routes/question.bank.routes')(app);
 
 // var questionRoute = require('./api/routes/question.routes');
 // app.use('/api', questionRoute);

@@ -1,5 +1,5 @@
 
-var questionModel= require('../../models/question');
+var questionModel= require('../../models/question.bank');
 var deviceModel= require('../../models/device.js');
 //-----------------question----------------------
 /**
