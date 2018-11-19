@@ -18,15 +18,18 @@ app.use(cors())
 
 var Question= require('./models/question');
 
+//profile routes
+
 
 var mongoconnectstring = 'mongodb://'+config.mongodb.server+':'+config.mongodb.port+'/'+config.mongodb.database;
 console.log(mongoconnectstring);
 mongoose.connect(mongoconnectstring);
 
 var db = mongoose.connection;
+require('./api/routes/question.routes.js')(app);
 
-var questionRoute = require('./api/routes/questionRoute');
-app.use('/api', questionRoute);
+// var questionRoute = require('./api/routes/question.routes');
+// app.use('/api', questionRoute);
 
 //app.use(device.capture());
 
